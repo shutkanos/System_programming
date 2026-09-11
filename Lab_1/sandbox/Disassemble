@@ -1,3 +1,9 @@
+
+This GDB supports auto-downloading debuginfo from the following URLs:
+  <https://debuginfod.ubuntu.com>
+Enable debuginfod for this session? (y or [n]) [answered N; input not from terminal]
+Debuginfod has been disabled.
+To make this setting permanent, add 'set debuginfod enabled off' to .gdbinit.
 Dump of assembler code for function main:
    0x0000000000001149 <+0>:	endbr64
    0x000000000000114d <+4>:	push   %rbp
@@ -16,8 +22,35 @@ Dump of assembler code for function main:
    0x0000000000001184 <+59>:	ret
 End of assembler dump.
 
-Дегтярев:     file format elf32-i386
+Дегтярев:     file format elf64-x86-64
 
+
+Disassembly of section .flat:
+
+0000000000401000 <_start-0x2e>:
+  401000:	d0 94 d0 b5 d0 b3 d1 	rclb   $1,-0x2e4c2f4b(%rax,%rdx,8)
+  401007:	82                   	(bad)
+  401008:	d1 8f d1 80 d0 b5    	rorl   $1,-0x4a2f7f2f(%rdi)
+  40100e:	d0 b2 0a d0 98 d0    	shlb   $1,-0x2f672ff6(%rdx)
+  401014:	bb d1 8c d1 8f       	mov    $0x8fd18cd1,%ebx
+  401019:	0a d0                	or     %al,%dl
+  40101b:	a1 d0 b5 d1 80 d0 b3 	movabs 0xb5d0b3d080d1b5d0,%eax
+  401022:	d0 b5 
+  401024:	d0 b5 d0 b2 d0 b8    	shlb   $1,-0x472f4d30(%rbp)
+  40102a:	d1                   	.byte 0xd1
+  40102b:	87 0a                	xchg   %ecx,(%rdx)
+	...
+
+000000000040102e <_start>:
+  40102e:	48 c7 c0 04 00 00 00 	mov    $0x4,%rax
+  401035:	48 c7 c3 01 00 00 00 	mov    $0x1,%rbx
+  40103c:	48 b9 00 10 40 00 00 	movabs $0x401000,%rcx
+  401043:	00 00 00 
+  401046:	48 c7 c2 2e 00 00 00 	mov    $0x2e,%rdx
+  40104d:	cd 80                	int    $0x80
+  40104f:	48 c7 c0 01 00 00 00 	mov    $0x1,%rax
+  401056:	48 c7 c3 00 00 00 00 	mov    $0x0,%rbx
+  40105d:	cd 80                	int    $0x80
 
 С_version:     file format elf64-x86-64
 

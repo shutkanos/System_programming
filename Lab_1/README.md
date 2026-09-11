@@ -24,7 +24,7 @@ sudo apt install -y gcc gdb fasm mc
 ```bash
 cd sandbox
 fasm Дегтярев.asm
-chmod +x Дегтярев
+ld -m elf_i386 Дегтярев.o -o Дегтярев
 ./Дегтярев
 ```
 
